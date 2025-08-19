@@ -3,7 +3,10 @@ package com.sunbeam.service;
 import com.sunbeam.dto.FeedbackAnswerDto;
 import com.sunbeam.dto.FeedbackResponseDto;
 import com.sunbeam.entities.*;
-import com.sunbeam.Repository.*;
+import com.sunbeam.repository.FeedbackResponseRepository;
+import com.sunbeam.repository.TemplateQuestionRepository;
+import com.sunbeam.repository.UserRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -35,10 +38,10 @@ public class FeedbackResponseServiceImpl implements FeedbackResponseService {
 
     @Override
     public FeedbackResponseDto submitResponse(FeedbackResponseDto dto) {
-        UserEntity student = userRepo.findById(dto.getStudentId())
+        User student = userRepo.findById(dto.getStudentId())
                 .orElseThrow(() -> new RuntimeException("Student not found"));
 
-        FeedbackTemplate template = templateRepo.findById(dto.getTemplateId())
+        FeedbackResponse template = templateRepo.findById(dto.getTemplateId())
                 .orElseThrow(() -> new RuntimeException("Template not found"));
 
         FeedbackResponse response = new FeedbackResponse();

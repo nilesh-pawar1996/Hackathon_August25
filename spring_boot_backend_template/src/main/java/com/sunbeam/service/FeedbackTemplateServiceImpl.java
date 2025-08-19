@@ -1,10 +1,11 @@
 package com.sunbeam.service;
 
-import com.sunbeam.Repository.FeedbackTemplateRepository;
+
 import com.sunbeam.dto.FeedbackTemplateDto;
 import com.sunbeam.dto.TemplateQuestionDto;
-import com.sunbeam.entities.FeedbackTemplate;
+import com.sunbeam.entities.FeedbackTemplateEntity;
 import com.sunbeam.entities.TemplateQuestion;
+import com.sunbeam.repository.FeedbackTemplateRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class FeedbackTemplateServiceImpl implements FeedbackTemplateService {
 
     @Override
     public FeedbackTemplateDto createTemplate(FeedbackTemplateDto dto) {
-        FeedbackTemplate template = new FeedbackTemplate();
+        FeedbackTemplateEntity template = new FeedbackTemplateEntity();
         template.setTitle(dto.getTitle());
         template.setDescription(dto.getDescription());
 
@@ -49,7 +50,7 @@ public class FeedbackTemplateServiceImpl implements FeedbackTemplateService {
 
         template.setQuestions(questions);
 
-        FeedbackTemplate saved = templateRepo.save(template);
+        FeedbackTemplateEntity saved = templateRepo.save(template);
         return mapToDto(saved);
     }
 
@@ -62,7 +63,7 @@ public class FeedbackTemplateServiceImpl implements FeedbackTemplateService {
     }
 
     // mapper
-    private FeedbackTemplateDto mapToDto(FeedbackTemplate template) {
+    private FeedbackTemplateDto mapToDto(FeedbackTemplateEntity template) {
         return FeedbackTemplateDto.builder()
                 .id(template.getId())
                 .title(template.getTitle())
