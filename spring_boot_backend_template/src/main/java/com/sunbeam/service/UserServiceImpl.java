@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.sunbeam.daos.UserDao;
+import com.sunbeam.Repository.UserDao;
 import com.sunbeam.entities.UserEntity;
 
 import jakarta.transaction.Transactional;
