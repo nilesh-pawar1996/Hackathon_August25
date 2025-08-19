@@ -16,7 +16,7 @@ public class FeedbackResponseServiceImpl implements FeedbackResponseService {
 
     private final FeedbackResponseRepository responseRepo;
     private final UserRepository userRepo;
-    private final FeedbackTemplateRepository templateRepo;
+    private final FeedbackResponseRepository templateRepo;
     private final TemplateQuestionRepository questionRepo;
 
     @Override
