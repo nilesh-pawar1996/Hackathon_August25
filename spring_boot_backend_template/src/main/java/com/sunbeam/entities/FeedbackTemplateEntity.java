@@ -2,6 +2,7 @@ package com.sunbeam.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.List;
 
 @Entity
@@ -10,18 +11,17 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true, exclude = {"createdBy", "questions"})
-public class FeedbackTemplateEntity extends BaseEntity {
+@Builder
+public class FeedbackTemplate {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(length = 100, nullable = false, unique = true)
-    private String templateName;
+    private String title;
 
-    // Template created by Admin
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "created_by", nullable = false)
-    private User createdBy;
+    private String description;
 
-    // Template has many questions
+    // template contains multiple questions
     @OneToMany(mappedBy = "template", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TemplateQuestionEntity> questions;
+    private List<TemplateQuestion> questions;
 }
