@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FeedbackTemplate {
+public class FeedbackTemplateEntity { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

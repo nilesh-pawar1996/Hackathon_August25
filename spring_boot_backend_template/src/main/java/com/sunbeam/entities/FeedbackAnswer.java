@@ -24,5 +24,5 @@ public class FeedbackAnswer {
 
     @ManyToOne(fetch = FetchType.LAZY)   // each answer belongs to one response
     @JoinColumn(name = "response_id", nullable = false)
-    private FeedbackResponse response;
+    private FeedbackResponseEntity response;
 }

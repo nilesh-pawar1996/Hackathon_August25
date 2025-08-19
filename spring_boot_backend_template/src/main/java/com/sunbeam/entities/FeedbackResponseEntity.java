@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FeedbackResponse {
+public class FeedbackResponseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,12 +20,12 @@ public class FeedbackResponse {
     // who submitted response
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
-    private UserEntity student;
+    private User student;
 
     // which template this response belongs to
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "template_id", nullable = false)
-    private FeedbackTemplate template;
+    private FeedbackTemplateEntity template;
 
     // answers inside the response
     @OneToMany(mappedBy = "response", cascade = CascadeType.ALL, orphanRemoval = true)
