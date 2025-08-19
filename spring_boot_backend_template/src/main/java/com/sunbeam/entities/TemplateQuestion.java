@@ -17,5 +17,5 @@ public class TemplateQuestion extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "template_id", nullable = false)
-    private FeedbackTemplate template;
+    private FeedbackTemplateEntity template;
 }
