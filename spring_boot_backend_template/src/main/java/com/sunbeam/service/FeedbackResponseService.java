@@ -1,5 +1,5 @@
-package com.sunbeam.dto;
 
+package com.sunbeam.service;
 import com.sunbeam.dto.FeedbackResponseDto;
 
 import java.util.List;

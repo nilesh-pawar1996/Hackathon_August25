@@ -1,9 +1,10 @@
 package com.sunbeam.service;
 
-import com.sunbeam.entities.UserEntity;
+import com.sunbeam.entities.User;
+
 
 public interface UserService {
 	
-	UserEntity addU(UserEntity u);
+	User addU(User u);
 
 }

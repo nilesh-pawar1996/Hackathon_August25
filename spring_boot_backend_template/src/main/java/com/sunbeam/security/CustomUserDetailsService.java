@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 	
-	private final UserDao userDao;
+	private final UserRepository userDao;
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

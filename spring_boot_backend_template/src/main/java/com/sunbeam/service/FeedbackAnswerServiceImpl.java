@@ -1,12 +1,13 @@
 package com.sunbeam.service;
 
-import com.sunbeam.Repository.FeedbackAnswerRepository;
-import com.sunbeam.Repository.FeedbackResponseRepository;
-import com.sunbeam.Repository.TemplateQuestionRepository;
+
 import com.sunbeam.dto.FeedbackAnswerDto;
 import com.sunbeam.entities.FeedbackAnswer;
 import com.sunbeam.entities.FeedbackResponse;
 import com.sunbeam.entities.TemplateQuestion;
+import com.sunbeam.repository.FeedbackAnswerRepository;
+import com.sunbeam.repository.FeedbackResponseRepository;
+import com.sunbeam.repository.TemplateQuestionRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class FeedbackAnswerServiceImpl implements FeedbackAnswerService {
 
-    private final FeedbackAnswerRepository answerRepo;   // ✅ correct repository
+    private final FeedbackAnswerRepository answerRepo;  
     private final TemplateQuestionRepository questionRepo;
     private final FeedbackResponseRepository responseRepo;
 
